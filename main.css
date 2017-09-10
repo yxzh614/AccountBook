@@ -1,0 +1,13 @@
+
+
+#navbar button {
+    font-family: Microsoft YaHei;
+    font-size: 20px;
+    background-color: inherit;
+    border: 0px;
+}
+#navbar button.selected{
+    background-color: rgba(0, 0, 255, 0.25);
+    border: 0px;
+    border-radius: 5px;
+}
