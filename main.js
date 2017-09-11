@@ -1,10 +1,11 @@
 
 var log = console.log.bind(console)
 log("log success")
-var Router = function () {
+var Router = function Router() {
     var o = {
         actived: "myBill",
-        newBill: Bill(),
+        newBill: NewBill(),
+        myBill: BillList(),
     }
 
 
@@ -23,15 +24,15 @@ var Router = function () {
             document.querySelector('#' + e.path[0].id).className = "selected"
             o.actived = e.path[0].id
             log(o.actived)
-            o['newBill'].show()
+            o[e.path[0].id].show()
         }
     })
     return o
 
 }
-var Bill = function Bill() {
+var NewBill = function NewBill() {
     var o = {
-        name: 'chi'
+        name: 'chi',
 
     }
     o.newBill = function newBill() {
@@ -55,8 +56,41 @@ var Bill = function Bill() {
     }
     return o
 }
+
 var BillList = function BillList() {
-    
+    var o = {
+
+    }
+    o.ul = document.querySelector('#billList')
+    o.show = function show() {
+        document.querySelector('#mainArea').innerHTML =
+            `
+            <ul id="billList">
+            <li>123123</li>
+            </ul>
+
+            `
+            xmlhttp.open("GET", "list.xml", true)
+            xmlhttp.send()
+    }
+    var xmlhttp;
+    if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest()
+    }
+    else {// code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP")
+    }
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 0) {
+            x=xmlhttp.responseXML.documentElement.getElementsByTagName("bill");
+            for(var i = 0; i < x.length; i++){
+                log(x)
+            }
+        }else{
+            log(xmlhttp.status)
+        }
+    }
+    return o
 }
 var _main = function _main() {
     var router = Router()

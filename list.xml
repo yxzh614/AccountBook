@@ -1,0 +1,32 @@
+<list>
+    <bill>
+        <name>转账</name>
+        <type>微信</type>
+        <money>0.3</money>
+    </bill>
+    <bill>
+        <name>转账</name>
+        <type>微信</type>
+        <money>0.3</money>
+    </bill>
+    <bill>
+        <name>转账</name>
+        <type>微信</type>
+        <money>0.3</money>
+    </bill>
+    <bill>
+        <name>转账</name>
+        <type>微信</type>
+        <money>0.3</money>
+    </bill>
+    <bill>
+        <name>转账</name>
+        <type>微信</type>
+        <money>0.3</money>
+    </bill>
+    <bill>
+        <name>转账</name>
+        <type>微信</type>
+        <money>0.3</money>
+    </bill>
+</list>
